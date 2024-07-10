@@ -29,7 +29,7 @@ clock = pygame.time.Clock()
 
 carImg = pygame.image.load('racecar40.png')
 iceBall = pygame.image.load('Iceball.png')
-volcano = pygame.image.load('volcano3.png')
+#volcano = pygame.image.load('volcano3.png')
 fireball = pygame.image.load('fireball2.png')
 game_title = pygame.image.load('title.png')
 wall = pygame.image.load('wall.png')
@@ -189,7 +189,7 @@ def game_loop():
                         iceY -= ice_speed
                         count=collision(thing_startx, thing_starty, thing_height, thing_width,iceX,iceY)
                         
-                        if(count>0):
+                        if(count is not None and count>0):
                             dodged += count
                             thing_startx=random.randrange(100,800)
                             thing_starty=-200
